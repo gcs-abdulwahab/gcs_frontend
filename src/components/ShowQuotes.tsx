@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
+type Quote = {
+    id: number;
+    quote: string;
+    author: string;
+};
 
 const ShowQuotes = () => {
-	const [quotes, setQuotes] = useState([]);
+	const [quotes, setQuotes] = useState<Quote[]>([]);
 	console.log("component render");
 	const fetchData = () => {
 		fetch("https://dummyjson.com/quotes")
